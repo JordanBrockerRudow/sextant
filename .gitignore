@@ -1,2 +1,3 @@
-pylon/node_modules
-sextant/node_modules
+node_modules
+util
+*.patch
