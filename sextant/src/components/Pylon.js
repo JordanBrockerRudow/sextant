@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // eslint-disable-next-line
-class IPAddress extends Component {
+class Pylon extends Component {
     render() {
       return (
         <div className="">
@@ -11,4 +11,4 @@ class IPAddress extends Component {
     }
 }
 
-export default IPAddress;
+export default Pylon;
