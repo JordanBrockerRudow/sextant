@@ -1,1 +1,0 @@
-export const baseURL = "https://api64.ipify.org?format=json";
