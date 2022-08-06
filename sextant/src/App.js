@@ -1,7 +1,7 @@
 import './App.css';
-import Banner from './components/Banner';
-import ExhibitContainer from './components/ExhibitContainer';
-import Exhibit from './components/Exhibit';
+import Banner from './components/layout/Banner';
+import ExhibitContainer from './components/layout/ExhibitContainer';
+import Exhibit from './components/layout/Exhibit';
 import IPAddress from './components/IP';
 
 
