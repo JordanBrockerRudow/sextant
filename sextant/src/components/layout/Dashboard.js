@@ -1,19 +1,25 @@
 import React from 'react';
 import Banner from './layout/Banner';
-import ExhibitContainer from './layout/ExhibitContainer';
+import Exhibit from './layout/Exhibit';
 
 
-
-function Dashboard(props) {
-    return(
+class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+  }
+  render() {
+      return(
         <div className="exhibit">
           <div className="main">
             <Banner/>
-            <ExhibitContainer/>
+            <Exhibit/>
 
           </div>
         </div>
     );
+  }
 }
 
 export default Dashboard;

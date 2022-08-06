@@ -1,16 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-// eslint-disable-next-line
-class Exhibit extends Component {
-    render() {
-      return (
-        <div className="card text-white bg-dark">
-            <div className="card-body">
-              {this.props.name}
-            </div>
-        </div>
-      );
-    }
+function Card(props) {
+  return (
+    <div className="card text-white bg-dark">
+      <div className="card-body">
+        {props.content}
+      </div>
+    </div>
+  );
 }
 
+
+
+class Exhibit extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      content: null
+    }
+  }
+  renderCard(i) {
+    return (
+      <Card content={this.props.content} />
+    );
+  }
+
+
+
+
+}
 export default Exhibit;
