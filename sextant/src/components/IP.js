@@ -1,5 +1,5 @@
-import React  from 'react';
-import ipifyURL from '../shared/ipifyURL';
+import React, { useState, useEffect } from 'react';
+import { ipifyURL } from '../shared/ipifyURL';
 
 // eslint-disable-next-line
 function IPAddress() {
