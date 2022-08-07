@@ -4,6 +4,7 @@ import axios from 'axios';
 //https://www.digitalocean.com/community/tutorials/react-axios-react
 // eslint-disable-next-line
 import { Card } from '../dashboard/Exhibit';
+import { ipifyURL } from '../shared/ipifyAPI';
 
 
 
@@ -14,16 +15,16 @@ export default class APIUtil extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`https://api64.ipify.org?format=json`)
+    axios.get(ipifyURL.text.ipv6)
       .then(res => {
-        const ipv6 = res.data.ip;
+        const ipv6 = res.data;
         console.log("IPv6: ", ipv6);
         this.setState({ ipv6 });
       })
 
-      axios.get(`https://api.ipify.org?format=json`)
+      axios.get(ipifyURL.text.ipv4)
       .then(res => {
-        const ipv4 = res.data.ip;
+        const ipv4 = res.data;
         console.log("IPv4: ", ipv4);
         this.setState({ ipv4 });
       })
