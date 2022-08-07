@@ -1,32 +1,38 @@
 import React, { Component } from 'react';
+import { w3cwebsocket as W3CWebSocket } from "websocket";
+import { Card } from '../dashboard/Exhibit';
 
-// eslint-disable-next-line
-class Pylon extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { seconds: 0 };
+const endpoint = new W3CWebSocket('ws://localhost:55455');
+
+class Pylon extends Component {
+  state = {
+    received: null,
+    sent: null,
+    latency: null
   }
-
-  tick() {
-    this.setState(state => ({
-      seconds: state.seconds + 1
-    }));
+  componentWillMount() {
+    endpoint.onopen = () => {
+      console.log('Pylon WebSocket Client Connected');
+    };
+    endpoint.onmessage = (message) => {
+      let received = Date.now();
+      let sent = message.date;
+      let latency = Math.abs(date1 - date2.valueOf());
+      this.setState({ received, sent });
+      Date.now();
+      console.log(message);
+      console.log(message.date);
+    };
   }
-
-  componentDidMount() {
-    this.interval = setInterval(() => this.tick(), 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
+  
   render() {
     return (
-      <div>
-        Seconds: {this.state.seconds}
-      </div>
+      <>
+        <Card title="Latency" content={}/>
+        
+      </>
     );
   }
 }
+
 export default Pylon;
