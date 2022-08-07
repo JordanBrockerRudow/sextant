@@ -40,7 +40,7 @@ class Pylon extends Component {
     ];
     return (
       <>
-        <Exhibit extended="true" cards={pylonCards} />
+        <Exhibit listgroup="Latency" cards={pylonCards} />
       </>
     );
   }

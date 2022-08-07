@@ -1,5 +1,26 @@
 import React from 'react';
 // eslint-disable-next-line
+
+export function ListGroup(props) {
+    return (
+      <div className="card text-white bg-dark">
+        <h6 class="card-header">
+          {props.listgroup}
+        </h6>
+        <div className="card-body">
+          <ul class="list-group list-group-flush bg-dark">
+          {props.cards.map((card) => (
+            <li class="list-group-item d-flex justify-content-between align-items-center bg-dark text-white">
+              {card.title}
+              <span class="badge bg-primary rounded-pill">{card.content}</span>
+            </li>
+          ))}
+          </ul>
+        </div>
+      </div>
+    );
+}
+
 export function Card(props) {
   return (
     <div className="card text-white bg-dark">
@@ -16,6 +37,16 @@ export function Card(props) {
 
 
 export function Exhibit(props) {
+  if (props.listgroup && props.cards) {
+    const listItems = [];
+    return (
+      <div className="row row-cols-1 row-cols-md-2 g-4 mb-4">
+          <div class="col">
+            <ListGroup listgroup={props.listgroup} cards={props.cards}/>
+          </div>
+      </div>
+    );
+  }
   if (props.extended && props.cards) {
     return (
       <div className="row row-cols-1 row-cols-md-2 g-4 mb-4">
@@ -38,9 +69,9 @@ export function Exhibit(props) {
       </div>
     );
   }
-    return (
-      <div className="row row-cols-1 row-cols-md-2 g-4 mb-4"></div>
-    );
+  return (
+    <div className="row row-cols-1 row-cols-md-2 g-4 mb-4"></div>
+  );
 }
 
 
