@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
-import Exhibit from './Exhibit';
+// eslint-disable-next-line
+import { Exhibit, Card } from './Exhibit';
 
 
 class Dashboard extends React.Component {
