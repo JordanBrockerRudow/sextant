@@ -12,7 +12,7 @@ export function ListGroup(props) {
           {props.cards.map((card) => (
             <li class="list-group-item d-flex justify-content-between align-items-center bg-dark text-white">
               {card.title}
-              <span class="badge bg-primary rounded-pill">{card.content}</span>
+              <span class="badge bg-light text-dark">{card.content}</span>
             </li>
           ))}
           </ul>
@@ -38,7 +38,6 @@ export function Card(props) {
 
 export function Exhibit(props) {
   if (props.listgroup && props.cards) {
-    const listItems = [];
     return (
       <div className="row row-cols-1 row-cols-md-2 g-4 mb-4">
           <div class="col">
