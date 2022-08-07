@@ -1,10 +1,11 @@
 import React from 'react';
-
-function Card(props) {
+// eslint-disable-next-line
+export function Card(props) {
   return (
-    <div className="card text-white bg-dark">
+    <div className="card text-white bg-dark w-50">
       <div className="card-body">
-        {props.content}
+        <h5 class="card-title">{props.title}</h5>
+        <p class="card-text">{props.content}</p>
       </div>
     </div>
   );
@@ -12,21 +13,17 @@ function Card(props) {
 
 
 
-class Exhibit extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      content: null
-    }
-  }
-  renderCard(i) {
+export function Exhibit(props) {
     return (
-      <Card content={this.props.content} />
+      <div className="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          {props.content}
+        </div>
+      </div>
     );
-  }
-
-
-
-
 }
-export default Exhibit;
+
+
+
+
+
