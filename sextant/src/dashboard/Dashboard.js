@@ -1,7 +1,8 @@
 import React from 'react';
 import Banner from './Banner';
 // eslint-disable-next-line
-import { Exhibit, Card } from './Exhibit';
+import APIUtil from '../common/APIUtil';
+import Pylon from '../common/PylonClient';
 
 
 class Dashboard extends React.Component {
@@ -15,8 +16,8 @@ class Dashboard extends React.Component {
         <div className="exhibit">
           <div className="main">
             <Banner/>
-            <Exhibit/>
-
+            <APIUtil/>
+            <Pylon />
           </div>
         </div>
     );
