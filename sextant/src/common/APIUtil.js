@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 //https://www.digitalocean.com/community/tutorials/react-axios-react
 // eslint-disable-next-line
-import { Card } from '../dashboard/Exhibit';
+import { Exhibit, Card } from '../dashboard/Exhibit';
 import { ipifyURL } from '../shared/ipifyAPI';
 
 
@@ -31,10 +31,18 @@ export default class APIUtil extends React.Component {
   }
 
   render() {
+    const ipCards = [
+      {
+        title: "IPv4",
+        content: this.state.ipv4
+      }, {
+        title: "IPv6",
+        content: this.state.ipv6
+      }
+    ];
     return (
       <>
-        <Card title="IPv4" content={this.state.ipv4} />
-        <Card title="IPv6" content={this.state.ipv6} />
+        <Exhibit cards={ipCards} />
       </>
     )
   }
