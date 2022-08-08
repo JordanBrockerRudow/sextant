@@ -1,6 +1,20 @@
 import React from 'react';
 // eslint-disable-next-line
 
+export function ChartCard(props) {
+    return (
+      <div className="card text-white bg-dark p-2 w-75">
+        <h6 class="card-header">
+          {props.title}
+        </h6>
+        <div className="card-body p-4">
+          <canvas id={props.canvasID} style="width:100%;max-width:600px"></canvas>
+        </div>
+      </div>
+    );
+}
+
+
 export function ListGroup(props) {
     return (
       <div className="card text-white bg-dark">
@@ -22,21 +36,30 @@ export function ListGroup(props) {
 }
 
 export function Card(props) {
-  return (
-    <div className="card text-white bg-dark">
-      <h6 class="card-header">
-        {props.title}
-      </h6>
-      <div className="card-body">
-        <p class="card-text">{props.content}</p>
+    return (
+      <div className="card text-white bg-dark">
+        <h6 class="card-header">
+          {props.title}
+        </h6>
+        <div className="card-body">
+          <p class="card-text">{props.content}</p>
+        </div>
       </div>
-    </div>
-  );
+    );
 }
 
 
 
 export function Exhibit(props) {
+  if (props.canvases) {
+    <div className="row row-cols-1 row-cols-md-2 g-4 mb-4">
+        {props.canvases.map((canvas) => (
+          <div class="col">
+            <ChartCard title={canvas.title} canvasID={canvas.canvasID}/>
+          </div>
+         ))}
+      </div>
+  }
   if (props.listgroup && props.cards) {
     return (
       <div className="row row-cols-1 row-cols-md-2 g-4 mb-4">
