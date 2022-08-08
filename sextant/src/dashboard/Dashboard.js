@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
-// eslint-disable-next-line
-import APIUtil from '../common/APIUtil';
+
+import IPAddress from '../common/IP';
 import Pylon from '../common/PylonClient';
 
 
@@ -16,7 +16,7 @@ class Dashboard extends React.Component {
         <div className="exhibit">
           <div className="main">
             <Banner/>
-            <APIUtil/>
+            <IPAddress/>
             <Pylon />
           </div>
         </div>
